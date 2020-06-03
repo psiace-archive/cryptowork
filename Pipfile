@@ -1,0 +1,23 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+verify_ssl = true
+
+[dev-packages]
+black = "*"
+bump2version = "*"
+pytest = "*"
+coverage = "*"
+tox = "*"
+
+[packages]
+cryptowork = {path = ".",editable = true}
+python-dotenv = "*"
+loguru = "*"
+pydes = "*"
+
+[requires]
+python_version = "3.8"
+
+[pipenv]
+allow_prereleases = true
