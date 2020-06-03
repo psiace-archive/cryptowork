@@ -2,9 +2,27 @@
 
 > The value of the code is education, not the code itself.
 
-A set of codes for encryption and decryption algorithms in multiple languages.
+The goal is to implement some possible useful encryption/decryption algorithms in Python, and currently focus on DES-CBC, because this is part of the job.
 
 **Note:** This is not a complete project, it exists as a homework for *Information Assurance and Security*.
+
+## Status
+
+The framework of the project has been built and currently depends on [pyDes](https://github.com/twhiteman/pyDes), which needs to be replaced with my own implementation.
+
+## TODO
+
+- [ ] Replace `pyDes` with my own implementation.
+- [ ] Add more encryption/decryption algorithms.
+- [ ] Provide a register-based mechanism to facilitate others to expand.
+
+## Usage
+
+Change the contents of the .env file to configure your own information.
+
+``` Python
+from cryptowork.app import des_encrypt, des_descrypt
+```
 
 ## Contact
 
