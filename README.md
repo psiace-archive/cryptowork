@@ -12,7 +12,7 @@ The framework of the project has been built and currently depends on [pyDes](htt
 
 ## TODO
 
-- [ ] Replace `pyDes` with my own implementation.
+- [x] Replace `pyDes` with my own implementation.
 - [ ] Add more encryption/decryption algorithms.
 - [ ] Provide a register-based mechanism to facilitate others to expand.
 
@@ -22,6 +22,11 @@ Change the contents of the .env file to configure your own information.
 
 ``` Python
 from cryptowork.app import des_encrypt, des_descrypt
+
+string = "Let's test cryptowork."
+encode = des_encrypt(string)
+decode = des_descrypt(encode).decode()
+assert decode == string
 ```
 
 ## Contact
