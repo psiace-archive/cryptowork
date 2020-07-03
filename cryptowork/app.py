@@ -1,30 +1,31 @@
-from pyDes import des, CBC, PAD_PKCS5
 import binascii
+from typing import Union
 
+from cryptowork.algo.des import des
 from cryptowork.core.settings import KEY, IV
 
 
-def des_encrypt(s):
+def des_encrypt(s: str) -> bytes:
     """
     DES Encrypt
     :param s: Original String
     :return: Encrypted String, Hexadecimal
     """
-    secret_key = KEY
-    iv = IV.encode()
-    k = des(secret_key, CBC, iv, pad=None, padmode=PAD_PKCS5)
-    en = k.encrypt(s, padmode=PAD_PKCS5)
+    secret_key = str(KEY)
+    iv = str(IV).encode()
+    k = des(secret_key, iv)
+    en = k.encrypt(s)
     return binascii.b2a_hex(en)
 
 
-def des_descrypt(s):
+def des_descrypt(s: Union[bytes, str]) -> bytes:
     """
     DES Descrypt
     :param s: Encrypted String, Hexadecimal
     :return:  Descrypted String
     """
-    secret_key = KEY
-    iv = IV.encode()
-    k = des(secret_key, CBC, iv, pad=None, padmode=PAD_PKCS5)
-    de = k.decrypt(binascii.a2b_hex(s), padmode=PAD_PKCS5)
+    secret_key = str(KEY)
+    iv = str(IV).encode()
+    k = des(secret_key, iv)
+    de = k.decrypt(binascii.a2b_hex(s))
     return de
